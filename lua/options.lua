@@ -22,3 +22,6 @@ vim.keymap.set('n', '<leader>bp', ':bprev<cr>', { desc = "Move to the previous b
 vim.keymap.set('n', '<leader>l', ':Lazy<cr>', { desc = "Move to the previous buffer" })
 vim.keymap.set('n', '<C-d>', "yyp", { desc = "Copy line down" })
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<C-t>', ':tabnew<cr>')
+vim.keymap.set('n', '<leader>.', ":tabn<cr>")
+vim.keymap.set('n', '<leader>,', ":tabp<cr>")
