@@ -4,3 +4,4 @@ return {
     'tpope/vim-sleuth',
   },
 }
+
