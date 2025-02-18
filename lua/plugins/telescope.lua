@@ -18,6 +18,26 @@ return {
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+
+      require('telescope').setup({
+        defaults = {
+          prompt_prefix = " 󰳟  ",
+          selection_caret = " ",
+          layout_config = {
+            vertical = {
+              prompt_position = "top",
+              width = 0.9,
+              preview_width = 0.6
+            },
+            horizontal = {
+              prompt_position = "top",
+              width = 0.9,
+              preview_width = 0.6
+            },
+          },
+          sorting_strategy = "ascending",
+        }
+      })
     end
   },
   {
@@ -28,7 +48,6 @@ return {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown {
             }
-
           }
         }
       }
@@ -36,4 +55,3 @@ return {
     end
   }
 }
-
