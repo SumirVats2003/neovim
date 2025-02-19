@@ -22,12 +22,7 @@ require("lazy").setup("plugins")
 vim.cmd([[
   syntax on
   colorscheme tokyonight-night
-  set clipboard+=unnamedplus
-  if has('clipboard')
-    set clipboard=unnamedplus
-  endif
   let g:blamer_enabled = 1
-  set listchars=space:·
   filetype plugin indent on
 ]])
 
