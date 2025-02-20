@@ -5,6 +5,6 @@ return {
       options = {
       }
     })
+    vim.cmd.colorscheme('tokyonight-night')
   end
 }
-

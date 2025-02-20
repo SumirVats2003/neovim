@@ -18,11 +18,3 @@ require("options")
 require("keymaps")
 require("floating-terminal")
 require("lazy").setup("plugins")
-
-vim.cmd([[
-  syntax on
-  colorscheme tokyonight-night
-  let g:blamer_enabled = 1
-  filetype plugin indent on
-]])
-
