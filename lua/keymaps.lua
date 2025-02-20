@@ -29,3 +29,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- TJ the God
 vim.keymap.set('n', '<leader>z', ":Floaterminal<cr>")
+
+-- Disable arrow keys in all modes
+vim.keymap.set({ 'i', 'v', 'n', 't', 'x' }, '<left>', '')
+vim.keymap.set({ 'i', 'v', 'n', 't', 'x' }, '<right>', '')
+vim.keymap.set({ 'i', 'v', 'n', 't', 'x' }, '<up>', '')
+vim.keymap.set({ 'i', 'v', 'n', 't', 'x' }, '<down>', '')
