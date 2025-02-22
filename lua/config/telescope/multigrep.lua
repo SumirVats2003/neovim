@@ -23,7 +23,7 @@ local live_multigrep = function(opts)
       end
 
       if pieces[2] then
-        pieces[2] = "*" .. pieces[2]
+        -- pieces[2] = "*" .. pieces[2]
         table.insert(args, "-g")
         table.insert(args, pieces[2])
       end
