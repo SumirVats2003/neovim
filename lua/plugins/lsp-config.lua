@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "angularls", "html", "eslint", "ts_ls" }
+        ensure_installed = { "lua_ls", "angularls", "html", "eslint", "ts_ls", "rust_analyzer" }
       })
     end
   },
@@ -21,13 +21,14 @@ return {
       lspconfig.eslint.setup({})
       lspconfig.ts_ls.setup({})
       lspconfig.angularls.setup({})
+      lspconfig.rust_analyzer.setup({})
 
       vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
       vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
       vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
       vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
-      local servers = { 'ts_ls', 'html', 'cssls', 'angularls' }
+      local servers = { 'ts_ls', 'html', 'cssls', 'angularls', 'rust_analyzer' }
 
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {}
