@@ -4,7 +4,7 @@ vim.g.maplocalleader = " "
 
 -- line numbers
 vim.opt.number = true
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 
 -- the fancy stuff
 vim.opt.termguicolors = true
