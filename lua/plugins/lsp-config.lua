@@ -34,6 +34,14 @@ return {
         lspconfig[lsp].setup {}
       end
 
+      local function organize_imports()
+        local params = {
+          command = "_typescript.organizeImports",
+          arguments = { vim.api.nvim_buf_get_name(0) },
+        }
+        vim.lsp.buf.execute_command(params)
+      end
+
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('UserLspConfig', {}),
         callback = function(ev)
@@ -68,9 +76,9 @@ return {
               }
             }
           end, opts)
+          vim.keymap.set('n', '<leader>oi', organize_imports)
         end,
       })
     end
   }
 }
-
