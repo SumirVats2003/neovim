@@ -13,6 +13,7 @@ vim.opt.showmode = false
 vim.opt.cursorline = true
 vim.opt.signcolumn = "yes"
 vim.g.have_nerd_font = true
+-- vim.opt.guicursor = ""
 
 -- save my indentation
 vim.opt.expandtab = true

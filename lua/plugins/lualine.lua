@@ -41,7 +41,7 @@ return {
     require('lualine').setup {
       options = {
         globalstatus = true,
-        theme = 'carbonfox',
+        theme = 'tokyonight',
         icons_enabled = true,
         component_separators = { left = '', right = ''},
         section_separators = { left = '', right = ''},
