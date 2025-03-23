@@ -70,3 +70,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- slimline filler
+vim.opt.fillchars = {
+  stl = "─",
+}
+
+-- set global statusline
+vim.opt.laststatus = 3
