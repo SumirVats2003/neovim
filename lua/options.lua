@@ -78,3 +78,6 @@ vim.opt.fillchars = {
 
 -- set global statusline
 vim.opt.laststatus = 3
+
+-- disable recording info below the statusline
+vim.opt.shortmess:append('q')
