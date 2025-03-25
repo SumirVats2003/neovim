@@ -18,3 +18,5 @@ require("options")
 require("keymaps")
 require("floating-terminal")
 require("lazy").setup("plugins")
+
+vim.loader.enable()
