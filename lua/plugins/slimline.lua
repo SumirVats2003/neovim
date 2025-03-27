@@ -1,6 +1,6 @@
 return {
   {
-    "sschleemilch/slimline.nvim",
+    "SumirVats2003/slimline.nvim",
     opts = {
       bold = true,
       verbose_mode = false,
