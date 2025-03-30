@@ -72,12 +72,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- slimline filler
-vim.opt.fillchars = {
-  stl = "─",
-}
+-- vim.opt.fillchars = {
+--   stl = "─",
+-- }
 
 -- set global statusline
 vim.opt.laststatus = 3
 
 -- disable recording info below the statusline
-vim.opt.shortmess:append('q')
+-- vim.opt.shortmess:append('q')
