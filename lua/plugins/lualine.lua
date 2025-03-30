@@ -64,7 +64,8 @@ return {
       },
       sections = {
         lualine_a = { mode },
-        lualine_b = { { 'branch', icons_enabled = true, icon = '' } },
+        -- lualine_b = { { 'branch', icons_enabled = true, icon = '' } },
+        lualine_b = { { 'branch', icons_enabled = true, icon = ' ' } },
         lualine_c = { filename },
         lualine_x = { diagnostics, diff, { 'encoding', cond = hide_in_width }, { 'filetype', cond = hide_in_width } },
         lualine_y = { 'progress' },
