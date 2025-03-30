@@ -17,6 +17,14 @@ vim.opt.rtp:prepend(lazypath)
 require("options")
 require("keymaps")
 require("floating-terminal")
-require("lazy").setup("plugins")
+require("lazy").setup({
+  -- Import all plugin modules from the new structure
+  { import = "plugins.ui" },
+  { import = "plugins.dev" },
+  { import = "plugins.editor" },
+  { import = "plugins.navigation" },
+  { import = "plugins.git" },
+  { import = "plugins.tools" },
+})
 
 vim.loader.enable()
