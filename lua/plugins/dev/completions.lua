@@ -1,9 +1,24 @@
 return {
   {
     "hrsh7th/cmp-cmdline",
+  },
+  {
+    "hrsh7th/cmp-nvim-lsp"
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    dependencies = {
+      "saadparwaiz1/cmp_luasnip",
+      "rafamadriz/friendly-snippets",
+    },
+  },
+  {
+    "hrsh7th/nvim-cmp",
     config = function()
       local cmp = require("cmp")
-      -- `/` cmdline setup.
+      local cmp_select = { behavior = cmp.SelectBehavior.Select }
+      require("luasnip.loaders.from_vscode").lazy_load()
+
       cmp.setup.cmdline("/", {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
@@ -25,24 +40,6 @@ return {
           },
         }),
       })
-    end
-  },
-  {
-    "hrsh7th/cmp-nvim-lsp"
-  },
-  {
-    "L3MON4D3/LuaSnip",
-    dependencies = {
-      "saadparwaiz1/cmp_luasnip",
-      "rafamadriz/friendly-snippets",
-    },
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    config = function()
-      local cmp = require("cmp")
-      local cmp_select = { behavior = cmp.SelectBehavior.Select }
-      require("luasnip.loaders.from_vscode").lazy_load()
 
       cmp.setup({
         snippet = {
