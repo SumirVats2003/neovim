@@ -1,5 +1,33 @@
 return {
   {
+    "hrsh7th/cmp-cmdline",
+    config = function()
+      local cmp = require("cmp")
+      -- `/` cmdline setup.
+      cmp.setup.cmdline("/", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "buffer" },
+        },
+      })
+
+      -- `:` cmdline setup.
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = "path" },
+        }, {
+          {
+            name = "cmdline",
+            option = {
+              ignore_cmds = { "Man", "!" },
+            },
+          },
+        }),
+      })
+    end
+  },
+  {
     "hrsh7th/cmp-nvim-lsp"
   },
   {
@@ -13,7 +41,7 @@ return {
     "hrsh7th/nvim-cmp",
     config = function()
       local cmp = require("cmp")
-      local cmp_select = {behavior = cmp.SelectBehavior.Select}
+      local cmp_select = { behavior = cmp.SelectBehavior.Select }
       require("luasnip.loaders.from_vscode").lazy_load()
 
       cmp.setup({
@@ -33,7 +61,7 @@ return {
           ["<C-e>"] = cmp.mapping.abort(),
           ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
           ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-          ["<CR>"] = cmp.mapping.confirm({select = true}),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
@@ -45,4 +73,3 @@ return {
     end,
   },
 }
-
