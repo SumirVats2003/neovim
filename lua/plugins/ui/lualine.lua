@@ -300,8 +300,8 @@ return {
         globalstatus = true,
         theme = 'tokyonight',
         icons_enabled = true,
-        component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
         -- component_separators = { left = '', right = '' },
         -- section_separators = { left = '', right = '' },
         -- component_separators = { left = '', right = '' },
@@ -323,7 +323,14 @@ return {
         lualine_a = { mode },
         -- lualine_b = { { 'branch', icons_enabled = true, icon = '' } },
         lualine_b = { { 'branch', icons_enabled = true, icon = ' ' } },
-        lualine_c = { filename },
+        lualine_c = {
+          {
+            'filename',
+            symbols = {
+              modified = '',
+            }
+          }
+        },
         lualine_x = { diagnostics, diff, { 'encoding', cond = hide_in_width }, { 'filetype', cond = hide_in_width } },
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
