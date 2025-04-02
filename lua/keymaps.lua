@@ -35,3 +35,9 @@ vim.keymap.set({ 'i', 'v', 'n', 'x' }, '<left>', '')
 vim.keymap.set({ 'i', 'v', 'n', 'x' }, '<right>', '')
 vim.keymap.set({ 'i', 'v', 'n', 'x' }, '<up>', '')
 vim.keymap.set({ 'i', 'v', 'n', 'x' }, '<down>', '')
+
+-- TS imports
+vim.keymap.set('n', '<leader>oi', ":TSToolsOrganizeImports<CR>", { desc = "Organise Imports" })
+vim.keymap.set('n', '<leader>ui', ":TSToolsRemoveUnusedImports<CR>", { desc = "Organise Imports" })
+vim.keymap.set('n', '<leader>ai', ":TSToolsAddMissingImports<CR>", { desc = "Organise Imports" })
+vim.keymap.set('n', '<leader>ru', ":TSToolsRemoveUnused<CR>", { desc = "Organise Imports" })
