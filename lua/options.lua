@@ -81,3 +81,9 @@ vim.opt.laststatus = 3
 
 -- disable recording info below the statusline
 -- vim.opt.shortmess:append('q')
+
+-- nightfly ui tweeks
+vim.g.nightflyCursorColor = true
+vim.g.nightflyItalics = false
+vim.g.nightflyVirtualTextColor = true
+vim.g.nightflyWinSeparator = 2
