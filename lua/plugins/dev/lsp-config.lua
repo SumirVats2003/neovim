@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "angularls", "html", "eslint", "rust_analyzer", "gopls" }
+        ensure_installed = { "lua_ls", "angularls", "html", "rust_analyzer", "gopls" }
       })
     end
   },
@@ -17,11 +17,6 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({})
-      lspconfig.eslint.setup({})
-      lspconfig.angularls.setup({})
-      lspconfig.rust_analyzer.setup({})
-      lspconfig.gopls.setup({})
 
       vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
       vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
