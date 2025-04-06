@@ -50,7 +50,7 @@ return {
         { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
         {
           pane = 2,
-          icon = " ",
+          icon = " ",
           title = "Git Status",
           section = "terminal",
           enabled = function()
