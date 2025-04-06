@@ -23,7 +23,7 @@ return {
       vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
       vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
-      local servers = { 'html', 'cssls', 'angularls', 'rust_analyzer', "gopls" }
+      local servers = { 'lua_ls', 'html', 'cssls', 'angularls', 'rust_analyzer', "gopls" }
 
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {}
