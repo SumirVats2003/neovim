@@ -51,7 +51,7 @@ return {
         },
         ignore_focus = {},
         always_divide_middle = true,
-        always_show_tabline = true,
+        always_show_tabline = false,
         refresh = {
           statusline = 100,
           tabline = 100,
@@ -108,6 +108,24 @@ return {
       },
       tabline = {
         -- extensions = { 'vim-fugitive' },
+        lualine_a = {
+          {
+            'filename',
+            symbols = {
+              modified = '',
+            },
+            separator = { left = "", right = "" },
+          }
+        },
+        lualine_z = {
+          {
+            "tabs",
+            mode = 2,
+            symbols = {
+              modified = '',
+            },
+          }
+        }
       },
       winbar = {},
       inactive_winbar = {},
