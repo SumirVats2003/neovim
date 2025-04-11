@@ -76,7 +76,21 @@ return {
             separator = { left = "", right = "" },
           }
         },
-        lualine_c = {},
+        lualine_c = {
+          {
+            'macro',
+            fmt = function()
+              local reg = vim.fn.reg_recording()
+              if reg ~= "" then
+                return " @" .. reg
+              end
+              return nil
+            end,
+            color = { bg = "#08bdba", fg = "#262e3d", gui = "bold" },
+            separator = { left = "", right = "" },
+            draw_empty = false,
+          }
+        },
         lualine_x = {
           diagnostics,
           diff,
