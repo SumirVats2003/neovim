@@ -72,7 +72,7 @@ return {
             symbols = {
               modified = '',
             },
-            color = { bg = "#2f3549", fg = "", gui = "bold" },
+            color = { bg = "#2a2d36", fg = "", gui = "bold" },
             separator = { left = "", right = "" },
           }
         },
