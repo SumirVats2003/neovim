@@ -43,7 +43,7 @@ return {
     require('lualine').setup {
       options = {
         globalstatus = true,
-        theme = 'tokyonight',
+        theme = 'catppuccin',
         icons_enabled = true,
         disabled_filetypes = {
           statusline = {},
