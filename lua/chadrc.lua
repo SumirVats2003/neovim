@@ -1,7 +1,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "poimandres"
+  theme = "decay"
 }
 
 M.ui = {
@@ -9,8 +9,8 @@ M.ui = {
     enabled = false,
   },
   statusline = {
-    theme = "minimal",
-    separator_style = "round",
+    theme = "default",
+    separator_style = "default",
     order = { "mode", "file", "git", "%=", "fmt", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" },
     modules = {
       fmt = function()
