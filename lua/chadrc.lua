@@ -27,4 +27,8 @@ M.ui = {
   cmp = { icons_left = true }
 }
 
+M.lsp = {
+  signature = false,
+}
+
 return M
