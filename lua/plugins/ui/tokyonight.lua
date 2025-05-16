@@ -1,11 +1,9 @@
-return {}
--- return {
---   "folke/tokyonight.nvim",
---   config = function()
---     require('tokyonight').setup({
---       options = {
---       }
---     })
---     vim.cmd.colorscheme('tokyonight')
---   end
--- }
+return {
+  "folke/tokyonight.nvim",
+  config = function()
+    require('tokyonight').setup({
+      transparent = true
+    })
+    vim.cmd.colorscheme('tokyonight')
+  end
+}
