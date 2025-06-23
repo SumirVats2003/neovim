@@ -8,7 +8,7 @@ return {
         return ' ' .. str
         -- return '  ' .. str:sub(1, 1) -- displays only the first character of the mode
       end,
-      separator = { left = "", right = "" },
+      separator = { left = "", right = "" },
     }
 
     local hide_in_width = function()
@@ -23,27 +23,28 @@ return {
       colored = true,
       update_in_insert = true,
       always_visible = false,
+      separator = { left = "", right = "" },
       cond = hide_in_width,
     }
 
-    local space = {
-      function()
-        return " "
-      end,
-    }
+    -- local space = {
+    --   function()
+    --     return " "
+    --   end,
+    -- }
 
     local diff = {
       'diff',
       colored = true,
       symbols = { added = ' ', modified = ' ', removed = ' ' }, -- changes diff symbols
-      separator = { left = "", right = "" },
+      separator = { left = "", right = "" },
       color = { bg = "#16161e", fg = "", gui = "bold" },
     }
 
     require('lualine').setup {
       options = {
         globalstatus = true,
-        theme = 'tokyonight',
+        theme = 'nordic',
         icons_enabled = true,
         disabled_filetypes = {
           statusline = {},
@@ -67,14 +68,14 @@ return {
             icon = '',
             separator = { left = "", right = "" },
           },
-          {
-            'filename',
-            symbols = {
-              modified = '',
-            },
-            color = { bg = "#2a2d36", fg = "", gui = "bold" },
-            separator = { left = "", right = "" },
-          }
+          -- {
+          --   'filename',
+          --   symbols = {
+          --     modified = '',
+          --   },
+          --   color = { bg = "#2a2d36", fg = "", gui = "bold" },
+          --   separator = { left = "", right = "" },
+          -- }
         },
         lualine_c = {
           {
@@ -91,25 +92,26 @@ return {
             draw_empty = false,
           }
         },
-        lualine_x = {
+        lualine_x = {},
+        lualine_y = {
           diagnostics,
           diff,
-          {
-            'filetype',
-            color = { bg = "#2f3549", fg = "", gui = "bold" },
-            separator = { left = "", right = "" },
-          },
-          space
+          -- {
+          --   'filetype',
+          --   color = { bg = "#2f3549", fg = "", gui = "bold" },
+          --   separator = { left = "", right = "" },
+          -- },
+          -- space
         },
-        lualine_y = {
-          {
-            'progress',
-            separator = { left = "", right = "" },
-          }
-        },
+        -- lualine_y = {
+        --   {
+        --     'progress',
+        --     separator = { left = "", right = "" },
+        --   }
+        -- },
         lualine_z = { {
-          'location',
-          separator = { left = "", right = "" },
+          'filename',
+          separator = { left = "", right = "" },
         } },
       },
       inactive_sections = {
@@ -128,7 +130,7 @@ return {
             symbols = {
               modified = '',
             },
-            separator = { left = "", right = "" },
+            separator = { left = "", right = "" },
           }
         },
         lualine_z = {
@@ -138,6 +140,7 @@ return {
             symbols = {
               modified = '',
             },
+            separator = { left = "", right = "" },
           }
         }
       },
