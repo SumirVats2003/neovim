@@ -44,7 +44,7 @@ return {
     require('lualine').setup {
       options = {
         globalstatus = true,
-        theme = 'nordic',
+        theme = 'rose-pine',
         icons_enabled = true,
         disabled_filetypes = {
           statusline = {},
