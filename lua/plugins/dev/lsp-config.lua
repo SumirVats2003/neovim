@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "angularls", "html", "rust_analyzer", "gopls" }
+        ensure_installed = { "jdtls", "lua_ls", "angularls", "html", "rust_analyzer", "gopls" }
       })
     end
   },
@@ -23,7 +23,7 @@ return {
       vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
       vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
-      local servers = { 'lua_ls', 'html', 'cssls', 'angularls', 'rust_analyzer', "gopls" }
+      local servers = { 'jdtls', 'lua_ls', 'html', 'cssls', 'angularls', 'rust_analyzer', "gopls" }
 
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {}

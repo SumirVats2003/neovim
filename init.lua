@@ -22,11 +22,11 @@ require("floating-terminal")
 require("lazy").setup({
   -- Import all plugin modules from the new structure
   { import = "plugins.ui" },
+  { import = "plugins.tools" },
   { import = "plugins.dev" },
   { import = "plugins.editor" },
   { import = "plugins.navigation" },
   { import = "plugins.git" },
-  { import = "plugins.tools" },
 })
 
 -- for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
