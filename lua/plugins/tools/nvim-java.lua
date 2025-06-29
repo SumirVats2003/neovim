@@ -1,6 +1,7 @@
-return {
-  'nvim-java/nvim-java',
-  config = function()
-    require('java').setup()
-  end
-}
+return {}
+-- return {
+--   'nvim-java/nvim-java',
+--   config = function()
+--     require('java').setup()
+--   end
+-- }
