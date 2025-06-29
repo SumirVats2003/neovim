@@ -111,6 +111,9 @@ return {
         -- },
         lualine_z = { {
           'filename',
+          symbols = {
+            modified = '',
+          },
           separator = { left = "", right = "" },
         } },
       },
