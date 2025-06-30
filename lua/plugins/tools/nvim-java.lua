@@ -1,7 +1,7 @@
-return {}
--- return {
---   'nvim-java/nvim-java',
---   config = function()
---     require('java').setup()
---   end
--- }
+return {
+  'mfussenegger/nvim-jdtls',
+  ft = 'java',
+  config = function()
+    -- This will be configured in ftplugin/java.lua
+  end
+}
