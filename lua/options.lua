@@ -85,10 +85,10 @@ vim.opt.laststatus = 3
 -- vim.opt.shortmess:append('q')
 
 -- nightfly ui tweeks
--- vim.g.nightflyCursorColor = true
--- vim.g.nightflyItalics = false
--- vim.g.nightflyVirtualTextColor = true
--- vim.g.nightflyWinSeparator = 2
+vim.g.nightflyCursorColor = true
+vim.g.nightflyItalics = true
+vim.g.nightflyVirtualTextColor = true
+vim.g.nightflyWinSeparator = 2
 
 -- vim.api.nvim_set_hl(0, "St_macroIcon", { bg = "#f7768e", fg = "#1a1b26" }) -- Adjust colors to match your theme
 -- vim.api.nvim_set_hl(0, "St_macroText", { fg = "#f7768e", bg = "#323242" })
