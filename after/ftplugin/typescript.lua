@@ -46,7 +46,22 @@ local function add_async()
     return
   end
 
+  if vim.startswith(function_text, 'public async') then
+    return
+  end
+  if vim.startswith(function_text, 'private async') then
+    return
+  end
+
   local start_row, start_col = function_node:start()
+
+  if vim.startswith(function_text, 'public') then
+    start_col = start_col + 7
+  end
+  if vim.startswith(function_text, 'private') then
+    start_col = start_col + 8
+  end
+
   vim.api.nvim_buf_set_text(buffer, start_row, start_col, start_row, start_col, { 'async ' })
 end
 
