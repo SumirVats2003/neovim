@@ -44,7 +44,7 @@ return {
     require('lualine').setup {
       options = {
         globalstatus = true,
-        theme = 'nightfly',
+        theme = 'tokyonight',
         icons_enabled = true,
         disabled_filetypes = {
           statusline = {},
