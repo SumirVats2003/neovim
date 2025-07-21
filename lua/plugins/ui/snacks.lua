@@ -4,6 +4,7 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
+    zen = {},
     -- Default features configuration
     bigfile = { enabled = true },
     -- indent = { enabled = true },
@@ -65,6 +66,8 @@ return {
         { section = "startup" },
       },
     },
+  },
+  keys = {
+    { "<leader>m", function() Snacks.zen() end, desc = "Toggle Zen Mode" },
   }
 }
-
