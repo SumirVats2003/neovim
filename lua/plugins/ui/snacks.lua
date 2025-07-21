@@ -10,8 +10,20 @@ return {
     indent = {
       enabled = true,
       -- scope = {
+      --   char = "",
+      -- },
+      -- scope = {
       --   underline = true
       -- },
+      animate = {
+        enabled = vim.fn.has("nvim-0.10") == 1,
+        style = "out",
+        easing = "linear",
+        duration = {
+          step = 10,   -- ms per step
+          total = 500, -- maximum duration
+        },
+      },
       chunk = {
         -- when enabled, scopes will be rendered as chunks, except for the
         -- top-level scope which will be rendered as a scope.
@@ -27,6 +39,7 @@ return {
           corner_bottom = "╰",
           horizontal = "─",
           vertical = "│",
+          -- vertical = "",
           arrow = "",
         },
       },
