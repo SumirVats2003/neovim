@@ -4,7 +4,7 @@ return {
     "zeioth/heirline-components.nvim",
     opts = {
       icons = {
-        GitBranch = " ",
+        GitBranch = "",
         VimIcon = "",
       },
     }
@@ -25,25 +25,13 @@ return {
       },
       statusline = {
         hl = { fg = "fg", bg = "bg" },
-        -- lib.surround({
-        --   separator = "right",
-        --   color = "mode",
-        --   -- surround = { "", "" },
-        -- }),
-        lib.component.mode({ mode_text = { icon = "" } }),
+        lib.component.mode({ mode_text = {} }),
         lib.component.file_info({ filetype = false, filename = {}, file_modified = {} }),
-        -- lib.component.mode({
-        --   mode_text = {
-        --     -- icon = lib.icons.VimIcon,
-        --     padding = { left = 1, right = 1 },
-        --   },
-        -- }),
         lib.component.git_branch(),
         lib.component.fill(),
         lib.component.cmd_info({ hl = { fg = "#08bdba" } }),
         lib.component.fill(),
         lib.component.lsp(),
-        -- lib.component.compiler_state(),
         lib.component.nav({ ruler = false }),
         lib.component.git_diff(),
         lib.component.diagnostics(),
