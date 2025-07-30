@@ -1,18 +1,18 @@
 vim.pack.add({
-	-- file navigation
+  -- file navigation
   { src = "https://github.com/stevearc/oil.nvim" },
 
-	-- the mini world
+  -- the mini world
   { src = "https://github.com/echasnovski/mini.pick" },
   { src = "https://github.com/echasnovski/mini.surround" },
   { src = "https://github.com/echasnovski/mini.diff" },
   { src = "https://github.com/echasnovski/mini-git" },
 
-	-- treesitter
+  -- treesitter
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
 
-	-- ui and tooling
+  -- ui and tooling
   { src = "https://github.com/folke/tokyonight.nvim" },
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/windwp/nvim-autopairs" },
@@ -21,7 +21,7 @@ vim.pack.add({
   { src = "https://github.com/folke/todo-comments.nvim" },
   { src = "https://github.com/sindrets/diffview.nvim" },
 
-	-- lsp and autocompletions
+  -- lsp and autocompletions
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/hrsh7th/cmp-cmdline" },
   { src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
@@ -30,10 +30,22 @@ vim.pack.add({
 })
 
 require("lualine").setup({
+  options = {
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
+  },
   sections = {
     lualine_b = {
       { "branch", icon = { '' } }
-    }
+    },
+    lualine_x = {
+      {
+        'diff',
+        colored = true
+      }
+    },
+    lualine_y = { 'diagnostics' },
+    lualine_z = { 'lsp_status' }
   }
 })
 require("mini.pick").setup()
