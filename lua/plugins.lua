@@ -1,22 +1,27 @@
 vim.pack.add({
+	-- file navigation
   { src = "https://github.com/stevearc/oil.nvim" },
 
+	-- the mini world
   { src = "https://github.com/echasnovski/mini.pick" },
   { src = "https://github.com/echasnovski/mini.surround" },
   { src = "https://github.com/echasnovski/mini.diff" },
   { src = "https://github.com/echasnovski/mini-git" },
-  { src = "https://github.com/echasnovski/mini.statusline" },
 
+	-- treesitter
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
 
+	-- ui and tooling
   { src = "https://github.com/folke/tokyonight.nvim" },
+  { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/Goose97/timber.nvim" },
   { src = "https://github.com/mbbill/undotree" },
   { src = "https://github.com/folke/todo-comments.nvim" },
   { src = "https://github.com/sindrets/diffview.nvim" },
 
+	-- lsp and autocompletions
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/hrsh7th/cmp-cmdline" },
   { src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
@@ -24,14 +29,12 @@ vim.pack.add({
   { src = "https://github.com/hrsh7th/nvim-cmp" },
 })
 
-require("mini.statusline").setup({
-  content = {
-    filename = function()
-      local fname = vim.api.nvim_buf_get_name(0)
-      return vim.fn.fnamemodify(fname, ':t')
-    end,
-  },
-  use_icons = true
+require("lualine").setup({
+  sections = {
+    lualine_b = {
+      { "branch", icon = { '' } }
+    }
+  }
 })
 require("mini.pick").setup()
 require("mini.diff").setup()
