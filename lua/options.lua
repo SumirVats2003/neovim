@@ -1,54 +1,31 @@
--- leader of the crew
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
--- line numbers
-vim.opt.number = true
--- vim.opt.relativenumber = true
-
--- the fancy stuff
-vim.opt.termguicolors = true
-vim.opt.scrolloff = 5
-vim.opt.showmode = false
-vim.opt.cursorline = true
-vim.opt.signcolumn = "yes"
+vim.o.nu = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.termguicolors = true
+vim.o.showmode = false
+vim.o.cursorline = true
+vim.o.signcolumn = "yes"
+vim.o.laststatus = 3
 vim.g.have_nerd_font = true
-vim.opt.guicursor = ""
+vim.o.inccommand = 'split'
+vim.o.winborder = "rounded"
+vim.g.blamer_enabled = 1
+vim.o.wrap = false
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.o.undofile = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.splitright = true
+vim.o.splitbelow = true
 
--- save my indentation
-vim.opt.expandtab = true
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-
--- reduce updatetime
-vim.opt.updatetime = 50
-
--- recovery settings
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
-
--- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-
--- Configure how new splits should be opened
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-
--- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
-
--- Sync clipboard between OS and Neovim.
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
+  vim.o.clipboard = 'unnamedplus'
 end)
 
--- enable git blame
-vim.g.blamer_enabled = 1
-
--- Configure WSL clipboard integration
 if vim.fn.has('wsl') == 1 then
   vim.g.clipboard = {
     name = 'WslClipboard',
@@ -64,31 +41,23 @@ if vim.fn.has('wsl') == 1 then
   }
 end
 
--- Highlight when yanking text
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function()
-    vim.highlight.on_yank()
+    vim.hl.on_yank()
   end,
 })
 
--- slimline filler
--- vim.opt.fillchars = {
---   stl = "─",
--- }
+vim.cmd [[colorscheme tokyonight-night]]
 
--- set global statusline
-vim.opt.laststatus = 3
-
--- disable recording info below the statusline
--- vim.opt.shortmess:append('q')
-
--- nightfly ui tweeks
-vim.g.nightflyCursorColor = true
-vim.g.nightflyItalics = true
-vim.g.nightflyVirtualTextColor = true
-vim.g.nightflyWinSeparator = 2
-
--- vim.api.nvim_set_hl(0, "St_macroIcon", { bg = "#f7768e", fg = "#1a1b26" }) -- Adjust colors to match your theme
--- vim.api.nvim_set_hl(0, "St_macroText", { fg = "#f7768e", bg = "#323242" })
+vim.lsp.enable({ "lua_ls", "gopls", "angularls", "ts_ls", "html_ls", "css_ls" })
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client:supports_method('textDocument/completion') then
+      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+    end
+  end,
+})
+vim.cmd("set completeopt+=noselect")

@@ -1,43 +1,56 @@
--- split window navigation
+-- Navigation Keymaps
+vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>')
+vim.keymap.set({ 'n', 'v', 'x' }, '<leader>d', '"+d<CR>')
+vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = "Move to the split window to the right" })
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = "Move to the split window to the left" })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = "Move to the split window to the top" })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = "Move to the split window to the bottom" })
+vim.keymap.set('n', '<C-t>', ':tabnew<cr>')
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
--- split window
+-- Splitting Keymaps
 vim.keymap.set('n', '<C-\\>', ':vsplit<cr>', { desc = "Split window vertically" })
 vim.keymap.set('n', '<C-s>', ':split<cr>', { desc = "Split window vertically" })
 
--- buffer navigation
-vim.keymap.set('n', '<leader>bn', ':bnext<cr>', { desc = "Move to the next buffer" })
-vim.keymap.set('n', '<leader>bp', ':bprev<cr>', { desc = "Move to the previous buffer" })
-vim.keymap.set('n', '<C-t>', ':tabnew<cr>')
-vim.keymap.set('n', '<leader>.', ":tabn<cr>")
-vim.keymap.set('n', '<leader>,', ":tabp<cr>")
+-- Picker keymaps
+vim.keymap.set('n', '<leader>sf', ":Pick files<CR>")
+vim.keymap.set('n', '<leader>sg', ":Pick grep<CR>")
+vim.keymap.set('n', '<leader>sr', ":Pick resume<CR>")
+vim.keymap.set('n', '<leader><leader>', ":Pick buffers<CR>")
+vim.keymap.set('n', '<leader>h', ":Pick help<CR>")
 
--- lazy
-vim.keymap.set('n', '<leader>l', ':Lazy<cr>', { desc = "Move to the previous buffer" })
+-- Miscellaneous Plugin Keymaps
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+vim.keymap.set('n', '<leader>o', ":Oil<CR>")
 
--- misc bindings
-vim.keymap.set('n', '<C-d>', "yyp", { desc = "Copy line down" })
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
--- thanks to ThePrimeagen
-vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
-
--- TJ the God
-vim.keymap.set('n', '<leader>z', ":Floaterminal<cr>")
-
--- Disable arrow keys in all modes
-vim.keymap.set({ 'i', 'v', 'n', 'x' }, '<left>', '')
-vim.keymap.set({ 'i', 'v', 'n', 'x' }, '<right>', '')
-vim.keymap.set({ 'i', 'v', 'n', 'x' }, '<up>', '')
-vim.keymap.set({ 'i', 'v', 'n', 'x' }, '<down>', '')
-
--- TS imports
-vim.keymap.set('n', '<leader>oi', ":TSToolsOrganizeImports<CR>", { desc = "Organise Imports" })
-vim.keymap.set('n', '<leader>ui', ":TSToolsRemoveUnusedImports<CR>", { desc = "Organise Imports" })
-vim.keymap.set('n', '<leader>ai', ":TSToolsAddMissingImports<CR>", { desc = "Organise Imports" })
-vim.keymap.set('n', '<leader>ru', ":TSToolsRemoveUnused<CR>", { desc = "Organise Imports" })
+-- LSP Config
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+vim.keymap.set('n', 'K', vim.lsp.buf.hover)
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
+vim.keymap.set('n', '<leader>k', vim.lsp.buf.signature_help)
+vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder)
+vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder)
+vim.keymap.set('n', '<leader>wl', function()
+  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+end)
+vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition)
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
+vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action)
+vim.keymap.set('n', 'gr', vim.lsp.buf.references)
+vim.keymap.set('n', '<leader>f', function()
+  vim.lsp.buf.format {
+    async = true,
+    formatting_options = {
+      tabSize = 2,
+      insertSpaces = true,
+      trimTrailingWhitespace = true,
+      insertFinalNewline = true
+    }
+  }
+end)
+-- vim.cmd(":hi statusline guibg=NONE")
