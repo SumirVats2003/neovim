@@ -1,24 +1,41 @@
+-- leader keys
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+-- quality of life
 vim.o.nu = true
 vim.o.tabstop = 2
+
+-- indentation
 vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
+vim.o.expandtab = true
+vim.o.smartindent = true
+vim.o.autoindent = true
+
+-- visual settings
 vim.o.termguicolors = true
 vim.o.showmode = false
 vim.o.cursorline = true
 vim.o.signcolumn = "yes"
 vim.o.laststatus = 3
 vim.g.have_nerd_font = true
-vim.o.inccommand = 'split'
 vim.o.winborder = "rounded"
 vim.g.blamer_enabled = 1
 vim.o.wrap = false
+
+-- swap and undo
 vim.o.swapfile = false
 vim.o.backup = false
 vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.o.undofile = true
+
+-- search settings
 vim.o.ignorecase = true
 vim.o.smartcase = true
+vim.o.inccommand = 'split'
+
+-- split settings
 vim.o.splitright = true
 vim.o.splitbelow = true
 
