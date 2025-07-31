@@ -17,11 +17,17 @@ vim.keymap.set('n', '<C-\\>', ':vsplit<cr>', { desc = "Split window vertically" 
 vim.keymap.set('n', '<C-s>', ':split<cr>', { desc = "Split window vertically" })
 
 -- Picker keymaps
-vim.keymap.set('n', '<leader>sf', ":Pick files<CR>")
-vim.keymap.set('n', '<leader>sg', ":Pick grep<CR>")
-vim.keymap.set('n', '<leader>sr', ":Pick resume<CR>")
-vim.keymap.set('n', '<leader><leader>', ":Pick buffers<CR>")
-vim.keymap.set('n', '<leader>h', ":Pick help<CR>")
+vim.keymap.set('n', '<leader>sf', require("fzf-lua").files)
+vim.keymap.set('n', '<leader>sg', require("fzf-lua").live_grep)
+vim.keymap.set('n', '<leader>sr', require("fzf-lua").resume)
+vim.keymap.set('n', '<leader><leader>', require("fzf-lua").buffers)
+vim.keymap.set('n', '<leader>h', require("fzf-lua").helptags)
+vim.keymap.set('n', '<leader>ds', require("fzf-lua").lsp_document_symbols)
+vim.keymap.set({ 'n', 'v' }, '<leader>ca', require("fzf-lua").lsp_code_actions)
+vim.keymap.set({ 'n', 'v' }, '<leader>/', require("fzf-lua").grep_curbuf)
+vim.keymap.set({ 'n', 'v' }, '<leader>sw', require("fzf-lua").grep_cword)
+vim.keymap.set({ 'n', 'v' }, '<leader>sm', require("fzf-lua").marks)
+vim.keymap.set({ 'n', 'v' }, '<leader>gd', require("fzf-lua").git_diff)
 
 -- Miscellaneous Plugin Keymaps
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
@@ -40,7 +46,6 @@ vim.keymap.set('n', '<leader>wl', function()
 end)
 vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition)
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
-vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action)
 vim.keymap.set('n', 'gr', vim.lsp.buf.references)
 vim.keymap.set('n', '<leader>f', function()
   vim.lsp.buf.format {

@@ -2,17 +2,12 @@ vim.pack.add({
   -- file navigation
   { src = "https://github.com/stevearc/oil.nvim" },
 
-  -- the mini world
-  { src = "https://github.com/echasnovski/mini.pick" },
-  { src = "https://github.com/echasnovski/mini.surround" },
-  { src = "https://github.com/echasnovski/mini.diff" },
-  { src = "https://github.com/echasnovski/mini-git" },
-
   -- treesitter
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
 
   -- ui and tooling
+  { src = "https://github.com/ibhagwan/fzf-lua" },
   { src = "https://github.com/folke/tokyonight.nvim" },
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/windwp/nvim-autopairs" },
@@ -20,10 +15,12 @@ vim.pack.add({
   { src = "https://github.com/mbbill/undotree" },
   { src = "https://github.com/folke/todo-comments.nvim" },
   { src = "https://github.com/sindrets/diffview.nvim" },
+  { src = "https://github.com/lewis6991/gitsigns.nvim" },
+  { src = "https://github.com/NMAC427/guess-indent.nvim" },
+  { src = "https://github.com/echasnovski/mini.surround" },
 
   -- lsp and autocompletions
   { src = "https://github.com/neovim/nvim-lspconfig" },
-  { src = "https://github.com/hrsh7th/cmp-cmdline" },
   { src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
   { src = "https://github.com/L3MON4D3/LuaSnip" },
   { src = "https://github.com/hrsh7th/nvim-cmp" },
@@ -33,7 +30,7 @@ require("lualine").setup({
   options = {
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
-		globalstatus = true
+    globalstatus = true
   },
   sections = {
     lualine_b = {
@@ -49,20 +46,29 @@ require("lualine").setup({
     lualine_z = { 'lsp_status' }
   }
 })
-require("mini.pick").setup()
-require("mini.diff").setup()
-require("mini.git").setup()
-require("mini.surround").setup()
+
+require("gitsigns").setup({
+  current_line_blame = true,
+  signcolumn         = false,
+  numhl              = true
+})
 
 require("nvim-treesitter.configs").setup({
   ensure_installed = { "go", "typescript", "javascript", "lua", "html", "css", "angular" },
   highlight = { enable = true }
 })
 
+require("mini.surround").setup()
 require("oil").setup()
 require("tokyonight").setup()
 require("nvim-autopairs").setup()
 require("todo-comments").setup()
+require("fzf-lua").setup({
+  winopts = {
+    width = 0.85,
+    cursor_line = false
+  }
+})
 
 require("timber").setup({
   log_templates = {
@@ -168,21 +174,6 @@ cmp.setup.cmdline("/", {
   sources = {
     { name = "buffer" },
   },
-})
-
--- `:` cmdline setup.
-cmp.setup.cmdline(":", {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = "path" },
-  }, {
-    {
-      name = "cmdline",
-      option = {
-        ignore_cmds = { "Man", "!" },
-      },
-    },
-  }),
 })
 
 local options = {
