@@ -59,10 +59,16 @@ require("nvim-treesitter.configs").setup({
 })
 
 require("mini.surround").setup()
-require("oil").setup()
 require("tokyonight").setup()
 require("nvim-autopairs").setup()
 require("todo-comments").setup()
+
+require("oil").setup({
+  view_options = {
+    show_hidden = true
+  },
+})
+
 require("fzf-lua").setup({
   winopts = {
     width = 0.85,
