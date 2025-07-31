@@ -1,23 +1,23 @@
 vim.pack.add({
-  -- file navigation
+  -- tooling
   { src = "https://github.com/stevearc/oil.nvim" },
+  { src = "https://github.com/ibhagwan/fzf-lua" },
+  { src = "https://github.com/Goose97/timber.nvim" },
+  { src = "https://github.com/mbbill/undotree" },
+  { src = "https://github.com/sindrets/diffview.nvim" },
+  { src = "https://github.com/lewis6991/gitsigns.nvim" },
+  { src = "https://github.com/NMAC427/guess-indent.nvim" },
+  { src = "https://github.com/echasnovski/mini.surround" },
 
   -- treesitter
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
 
-  -- ui and tooling
-  { src = "https://github.com/ibhagwan/fzf-lua" },
+  -- ui
   { src = "https://github.com/folke/tokyonight.nvim" },
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/windwp/nvim-autopairs" },
-  { src = "https://github.com/Goose97/timber.nvim" },
-  { src = "https://github.com/mbbill/undotree" },
   { src = "https://github.com/folke/todo-comments.nvim" },
-  { src = "https://github.com/sindrets/diffview.nvim" },
-  { src = "https://github.com/lewis6991/gitsigns.nvim" },
-  { src = "https://github.com/NMAC427/guess-indent.nvim" },
-  { src = "https://github.com/echasnovski/mini.surround" },
 
   -- lsp and autocompletions
   { src = "https://github.com/neovim/nvim-lspconfig" },
