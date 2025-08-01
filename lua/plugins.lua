@@ -24,6 +24,7 @@ vim.pack.add({
   { src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
   { src = "https://github.com/L3MON4D3/LuaSnip" },
   { src = "https://github.com/hrsh7th/nvim-cmp" },
+  { src = "https://github.com/ray-x/lsp_signature.nvim" },
 })
 
 require("lualine").setup({

@@ -72,6 +72,12 @@ vim.lsp.enable({ "lua_ls", "gopls", "angularls", "ts_ls", "html", "css" })
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    local bufnr = ev.buf
+    require("lsp_signature").on_attach({
+      bind = true,
+      handler_opts = { border = "rounded" },
+      hint_prefix = ""
+    }, bufnr)
     if client:supports_method('textDocument/completion') then
       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
     end
