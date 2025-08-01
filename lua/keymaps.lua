@@ -27,7 +27,7 @@ vim.keymap.set({ 'n', 'v' }, '<leader>ca', require("fzf-lua").lsp_code_actions)
 vim.keymap.set({ 'n', 'v' }, '<leader>/', require("fzf-lua").grep_curbuf)
 vim.keymap.set({ 'n', 'v' }, '<leader>sw', require("fzf-lua").grep_cword)
 vim.keymap.set({ 'n', 'v' }, '<leader>sm', require("fzf-lua").marks)
-vim.keymap.set({ 'n', 'v' }, '<leader>gd', require("fzf-lua").git_diff)
+vim.keymap.set({ 'n', 'v' }, '<leader>gg', require("fzf-lua").git_diff)
 
 -- Miscellaneous Plugin Keymaps
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
