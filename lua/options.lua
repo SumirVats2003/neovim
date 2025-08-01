@@ -85,3 +85,13 @@ vim.diagnostic.config({
   update_in_insert = false,
   severity_sort = true,
 })
+
+local function organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = { vim.api.nvim_buf_get_name(0) },
+    title = "",
+  }
+  vim.lsp.buf.execute_command(params)
+end
+vim.keymap.set("n", "<leader>oi", organize_imports, { desc = "Organize Imports" })
