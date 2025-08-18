@@ -66,7 +66,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.cmd [[colorscheme tokyonight-night]]
+-- vim.cmd [[colorscheme tokyonight-night]]
 
 vim.lsp.enable({ "lua_ls", "gopls", "angularls", "ts_ls", "html", "css" })
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -101,3 +101,5 @@ local function organize_imports()
   vim.lsp.buf.execute_command(params)
 end
 vim.keymap.set("n", "<leader>oi", organize_imports, { desc = "Organize Imports" })
+
+vim.cmd(":hi statusline guibg=NONE guifg=#9c9c9c")

@@ -14,8 +14,8 @@ vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
 
   -- ui
-  { src = "https://github.com/folke/tokyonight.nvim" },
-  { src = "https://github.com/nvim-lualine/lualine.nvim" },
+  -- { src = "https://github.com/folke/tokyonight.nvim" },
+  -- { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/folke/todo-comments.nvim" },
 
@@ -27,26 +27,26 @@ vim.pack.add({
   { src = "https://github.com/ray-x/lsp_signature.nvim" },
 })
 
-require("lualine").setup({
-  options = {
-    component_separators = { left = '', right = '' },
-    section_separators = { left = '', right = '' },
-    globalstatus = true
-  },
-  sections = {
-    lualine_b = {
-      { "branch", icon = { '' } }
-    },
-    lualine_x = {
-      {
-        'diff',
-        colored = true
-      }
-    },
-    lualine_y = { 'diagnostics' },
-    lualine_z = { 'lsp_status' }
-  }
-})
+-- require("lualine").setup({
+--   options = {
+--     component_separators = { left = '', right = '' },
+--     section_separators = { left = '', right = '' },
+--     globalstatus = true
+--   },
+--   sections = {
+--     lualine_b = {
+--       { "branch", icon = { '' } }
+--     },
+--     lualine_x = {
+--       {
+--         'diff',
+--         colored = true
+--       }
+--     },
+--     lualine_y = { 'diagnostics' },
+--     lualine_z = { 'lsp_status' }
+--   }
+-- })
 
 require("gitsigns").setup({
   current_line_blame = true,
@@ -60,7 +60,7 @@ require("nvim-treesitter.configs").setup({
 })
 
 require("mini.surround").setup()
-require("tokyonight").setup()
+-- require("tokyonight").setup()
 require("nvim-autopairs").setup()
 require("todo-comments").setup()
 
