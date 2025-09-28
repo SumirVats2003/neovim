@@ -1,5 +1,6 @@
 vim.pack.add({
   -- tooling
+  { src = "https://github.com/nvim-lua/plenary.nvim" },
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/ibhagwan/fzf-lua" },
   { src = "https://github.com/Goose97/timber.nvim" },
@@ -8,16 +9,22 @@ vim.pack.add({
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/NMAC427/guess-indent.nvim" },
   { src = "https://github.com/echasnovski/mini.surround" },
+  { src = "https://github.com/pmizio/typescript-tools.nvim" },
 
   -- treesitter
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
 
   -- ui
-  { src = "https://github.com/folke/tokyonight.nvim" },
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/folke/todo-comments.nvim" },
+  {
+    src = "https://github.com/bluz71/vim-nightfly-colors",
+    name = "nightfly"
+  },
+  -- { src = "https://github.com/olimorris/onedarkpro.nvim" },
+  -- { src = "https://github.com/tiagovla/tokyodark.nvim" },
 
   -- lsp and autocompletions
   { src = "https://github.com/neovim/nvim-lspconfig" },
@@ -50,8 +57,8 @@ require("lualine").setup({
 
 require("gitsigns").setup({
   current_line_blame = true,
-  signcolumn         = false,
-  numhl              = true
+  signcolumn         = true,
+  numhl              = false
 })
 
 require("nvim-treesitter.configs").setup({
@@ -60,9 +67,15 @@ require("nvim-treesitter.configs").setup({
 })
 
 require("mini.surround").setup()
-require("tokyonight").setup()
+-- require("tokyodark").setup({
+--   -- transparent_background = true,
+--   custom_palette = {
+--     -- bg0 = "#181a1f"
+--   }
+-- })
 require("nvim-autopairs").setup()
 require("todo-comments").setup()
+require("typescript-tools").setup {}
 
 require("oil").setup({
   view_options = {
