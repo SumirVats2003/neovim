@@ -55,7 +55,7 @@ require("gitsigns").setup({
 })
 
 require("nvim-treesitter.configs").setup({
-  ensure_installed = { "go", "typescript", "javascript", "lua", "html", "css", "angular" },
+  ensure_installed = { "go", "typescript", "javascript", "lua", "html", "css", "angular", "java" },
   highlight = { enable = true }
 })
 
