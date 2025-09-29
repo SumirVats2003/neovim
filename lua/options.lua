@@ -101,3 +101,5 @@ local function organize_imports()
   vim.lsp.buf.execute_command(params)
 end
 vim.keymap.set("n", "<leader>oi", organize_imports, { desc = "Organize Imports" })
+vim.cmd.highlight('IndentLine guifg=#2b2b36')
+vim.cmd.highlight('IndentLineCurrent guifg=#51515e')
