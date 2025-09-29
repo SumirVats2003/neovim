@@ -19,10 +19,7 @@ vim.pack.add({
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/folke/todo-comments.nvim" },
-  {
-    src = "https://github.com/bluz71/vim-nightfly-colors",
-    name = "nightfly"
-  },
+  { src = "https://github.com/catppuccin/nvim" },
   -- { src = "https://github.com/olimorris/onedarkpro.nvim" },
   -- { src = "https://github.com/tiagovla/tokyodark.nvim" },
 
@@ -76,6 +73,9 @@ require("mini.surround").setup()
 require("nvim-autopairs").setup()
 require("todo-comments").setup()
 require("typescript-tools").setup {}
+require("catppuccin").setup({
+  flavor = "mocha"
+})
 
 require("oil").setup({
   view_options = {

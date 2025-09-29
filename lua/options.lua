@@ -66,7 +66,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.cmd [[colorscheme nightfly]]
+vim.cmd [[colorscheme catppuccin]]
 
 vim.lsp.enable({ "lua_ls", "gopls", "angularls", "ts_ls", "html", "css", "jdtls" })
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -101,7 +101,3 @@ local function organize_imports()
   vim.lsp.buf.execute_command(params)
 end
 vim.keymap.set("n", "<leader>oi", organize_imports, { desc = "Organize Imports" })
-
-vim.o.winborder = "single"
-vim.g.nightflyVirtualTextColor = true
-vim.g.nightflyWinSeparator = 0
