@@ -75,7 +75,8 @@ require("nvim-autopairs").setup()
 require("todo-comments").setup()
 require("typescript-tools").setup {}
 require("catppuccin").setup({
-  flavor = "mocha"
+  flavor = "mocha",
+  transparent_background = true
 })
 require("indentmini").setup()
 
