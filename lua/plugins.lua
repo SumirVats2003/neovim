@@ -16,11 +16,12 @@ vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
 
   -- ui
-  { src = "https://github.com/nvim-mini/mini.statusline" },
+  { src = "https://github.com/rebelot/heirline.nvim" },
+  { src = "https://github.com/zeioth/heirline-components.nvim" },
   { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/folke/todo-comments.nvim" },
   { src = "https://github.com/nvimdev/indentmini.nvim" },
-  { src = "https://github.com/folke/tokyonight.nvim" },
+  { src = "https://github.com/AstroNvim/astrotheme" },
 
   -- lsp and autocompletions
   { src = "https://github.com/neovim/nvim-lspconfig" },
@@ -68,13 +69,38 @@ require("mini.surround").setup()
 require("typescript-tools").setup({})
 require("guess-indent").setup({})
 
-require("mini.statusline").setup()
+require("heirline-components").setup({
+  icons = {
+    GitBranch = "",
+  },
+})
+local lib = require "heirline-components.all"
+local heirline = require("heirline")
+local heirline_components = require "heirline-components.all"
+heirline_components.init.subscribe_to_events()
+heirline.load_colors(heirline_components.hl.get_colors())
+heirline.setup({
+  statusline = {
+    hl = { fg = "fg", bg = "bg" },
+    lib.component.mode({ mode_text = {} }),
+    lib.component.git_branch(),
+    lib.component.file_info({ filetype = false, filename = {}, file_modified = {} }),
+    lib.component.fill(),
+    lib.component.cmd_info({ hl = { fg = "#08bdba" } }),
+    lib.component.fill(),
+    lib.component.diagnostics(),
+    lib.component.git_diff(),
+    lib.component.lsp(),
+    lib.component.nav({ ruler = false }),
+    lib.component.mode { surround = { separator = "right" } },
+  },
+})
+
 require("nvim-autopairs").setup()
 require("todo-comments").setup()
 require("indentmini").setup()
-require("tokyonight").setup({
-  style = "night",
-  transparent = true
+require("astrotheme").setup({
+  palette = "astrodark"
 })
 
 require('java').setup()
