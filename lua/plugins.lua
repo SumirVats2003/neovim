@@ -7,29 +7,27 @@ vim.pack.add({
   { src = "https://github.com/mbbill/undotree" },
   { src = "https://github.com/sindrets/diffview.nvim" },
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
-  { src = "https://github.com/NMAC427/guess-indent.nvim" },
   { src = "https://github.com/echasnovski/mini.surround" },
   { src = "https://github.com/pmizio/typescript-tools.nvim" },
+  { src = "https://github.com/NMAC427/guess-indent.nvim" },
 
   -- treesitter
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
 
   -- ui
-  { src = "https://github.com/nvim-lualine/lualine.nvim" },
+  { src = "https://github.com/nvim-mini/mini.statusline" },
   { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/folke/todo-comments.nvim" },
-  { src = "https://github.com/catppuccin/nvim" },
   { src = "https://github.com/nvimdev/indentmini.nvim" },
-  -- { src = "https://github.com/olimorris/onedarkpro.nvim" },
-  -- { src = "https://github.com/tiagovla/tokyodark.nvim" },
+  { src = "https://github.com/folke/tokyonight.nvim" },
 
   -- lsp and autocompletions
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
   { src = "https://github.com/L3MON4D3/LuaSnip" },
-  { src = "https://github.com/hrsh7th/nvim-cmp" },
   { src = "https://github.com/ray-x/lsp_signature.nvim" },
+  { src = "https://github.com/hrsh7th/nvim-cmp" },
 
   -- java
   {
@@ -41,68 +39,17 @@ vim.pack.add({
   'https://github.com/nvim-java/nvim-java',
 })
 
-require("lualine").setup({
-  options = {
-    component_separators = { left = '', right = '' },
-    section_separators = { left = '', right = '' },
-    globalstatus = true
-  },
-  sections = {
-    lualine_b = {
-      { "branch", icon = { '' } }
-    },
-    lualine_x = {
-      {
-        'diff',
-        colored = true
-      }
-    },
-    lualine_y = { 'diagnostics' },
-    lualine_z = { 'lsp_status' }
-  }
-})
-
-require("gitsigns").setup({
-  current_line_blame = true,
-  signcolumn         = true,
-  numhl              = false
-})
-
-require("nvim-treesitter.configs").setup({
-  ensure_installed = { "go", "typescript", "javascript", "lua", "html", "css", "angular", "java" },
-  highlight = { enable = true }
-})
-
-require('java').setup()
-require("mini.surround").setup()
--- require("tokyodark").setup({
---   -- transparent_background = true,
---   custom_palette = {
---     -- bg0 = "#181a1f"
---   }
--- })
-require("nvim-autopairs").setup()
-require("todo-comments").setup()
-require("typescript-tools").setup {}
-require("catppuccin").setup({
-  flavor = "mocha",
-  transparent_background = true
-})
-require("indentmini").setup()
-
 require("oil").setup({
   view_options = {
     show_hidden = true
   },
 })
-
 require("fzf-lua").setup({
   winopts = {
     width = 0.85,
     cursor_line = false
   }
 })
-
 require("timber").setup({
   log_templates = {
     default = {
@@ -111,7 +58,31 @@ require("timber").setup({
     }
   }
 })
+require("diffview").setup()
+require("gitsigns").setup({
+  current_line_blame = true,
+  signcolumn         = true,
+  numhl              = false
+})
+require("mini.surround").setup()
+require("typescript-tools").setup({})
+require("guess-indent").setup({})
 
+require("mini.statusline").setup()
+require("nvim-autopairs").setup()
+require("todo-comments").setup()
+require("indentmini").setup()
+require("tokyonight").setup({
+  style = "night",
+  transparent = true
+})
+
+require('java').setup()
+require "lsp_signature".setup()
+require("nvim-treesitter.configs").setup({
+  ensure_installed = { "go", "typescript", "javascript", "lua", "html", "css", "angular", "java" },
+  highlight = { enable = true }
+})
 require("nvim-treesitter.configs").setup({
   textobjects = {
     select = {
