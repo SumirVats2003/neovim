@@ -12,7 +12,7 @@ vim.pack.add({
   { src = "https://github.com/NMAC427/guess-indent.nvim" },
 
   -- treesitter
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
 
   -- ui
