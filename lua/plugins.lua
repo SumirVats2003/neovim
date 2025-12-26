@@ -12,16 +12,18 @@ vim.pack.add({
   { src = "https://github.com/NMAC427/guess-indent.nvim" },
 
   -- treesitter
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master" },
+  {
+    src = "https://github.com/nvim-treesitter/nvim-treesitter",
+    version = "master"
+  },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
 
   -- ui
-  { src = "https://github.com/rebelot/heirline.nvim" },
-  { src = "https://github.com/zeioth/heirline-components.nvim" },
+  { src = "https://github.com/nvim-lualine/lualine.nvim" },
+  { src = "https://github.com/folke/tokyonight.nvim" },
   { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/folke/todo-comments.nvim" },
   { src = "https://github.com/nvimdev/indentmini.nvim" },
-  { src = "https://github.com/AstroNvim/astrotheme" },
 
   -- lsp and autocompletions
   { src = "https://github.com/neovim/nvim-lspconfig" },
@@ -69,39 +71,32 @@ require("mini.surround").setup()
 require("typescript-tools").setup({})
 require("guess-indent").setup({})
 
-require("heirline-components").setup({
-  icons = {
-    GitBranch = "",
-  },
+require("tokyonight").setup({
+  transparent = true
 })
-local lib = require "heirline-components.all"
-local heirline = require("heirline")
-local heirline_components = require "heirline-components.all"
-heirline_components.init.subscribe_to_events()
-heirline.load_colors(heirline_components.hl.get_colors())
-heirline.setup({
-  statusline = {
-    hl = { fg = "fg", bg = "bg" },
-    lib.component.mode({ mode_text = {} }),
-    lib.component.git_branch(),
-    lib.component.file_info({ filetype = false, filename = {}, file_modified = {} }),
-    lib.component.fill(),
-    lib.component.cmd_info({ hl = { fg = "#08bdba" } }),
-    lib.component.fill(),
-    lib.component.diagnostics(),
-    lib.component.git_diff(),
-    lib.component.lsp(),
-    lib.component.nav({ ruler = false }),
-    lib.component.mode { surround = { separator = "right" } },
+require("lualine").setup({
+  options = {
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
+    globalstatus = true
   },
+  sections = {
+    lualine_b = {
+      { "branch", icon = { '' } }
+    },
+    lualine_x = {
+      {
+        'diff',
+        colored = true
+      }
+    },
+    lualine_y = { 'diagnostics' },
+    lualine_z = { 'lsp_status' }
+  }
 })
-
 require("nvim-autopairs").setup()
 require("todo-comments").setup()
 require("indentmini").setup()
-require("astrotheme").setup({
-  palette = "astrodark"
-})
 
 require('java').setup()
 require "lsp_signature".setup()

@@ -66,7 +66,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.cmd [[colorscheme astrodark]]
+vim.cmd [[colorscheme tokyonight-night]]
 
 vim.lsp.enable({ "lua_ls", "gopls", "angularls", "html", "css", "jdtls" })
 vim.api.nvim_create_autocmd('LspAttach', {
