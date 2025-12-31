@@ -24,6 +24,7 @@ vim.pack.add({
   { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/folke/todo-comments.nvim" },
   { src = "https://github.com/nvimdev/indentmini.nvim" },
+  { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 
   -- lsp and autocompletions
   { src = "https://github.com/neovim/nvim-lspconfig" },
@@ -76,8 +77,8 @@ require("tokyonight").setup({
 })
 require("lualine").setup({
   options = {
-    component_separators = { left = '', right = '' },
-    section_separators = { left = '', right = '' },
+    -- component_separators = { left = '', right = '' },
+    -- section_separators = { left = '', right = '' },
     globalstatus = true
   },
   sections = {
