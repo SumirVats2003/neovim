@@ -25,6 +25,8 @@ vim.pack.add({
   { src = "https://github.com/folke/todo-comments.nvim" },
   { src = "https://github.com/nvimdev/indentmini.nvim" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+  { src = "https://github.com/folke/noice.nvim" },
+  { src = "https://github.com/rcarriga/nvim-notify" },
 
   -- lsp and autocompletions
   { src = "https://github.com/neovim/nvim-lspconfig" },
@@ -98,6 +100,21 @@ require("lualine").setup({
 require("nvim-autopairs").setup()
 require("todo-comments").setup()
 require("indentmini").setup()
+require("noice").setup({
+  lsp = {
+    override = {
+      ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+      ["vim.lsp.util.stylize_markdown"] = true,
+      ["cmp.entry.get_documentation"] = true,
+    },
+  },
+  presets = {
+    command_palette = true,
+    long_message_to_split = false,
+    inc_rename = false,
+    lsp_doc_border = false
+  },
+})
 
 require('java').setup()
 require "lsp_signature".setup()
