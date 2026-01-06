@@ -117,6 +117,7 @@ require("todo-comments").setup()
 require("indentmini").setup()
 require("noice").setup({
   lsp = {
+    progress = { enabled = false },
     override = {
       ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
       ["vim.lsp.util.stylize_markdown"] = true,
@@ -129,6 +130,9 @@ require("noice").setup({
     inc_rename = false,
     lsp_doc_border = false
   },
+})
+require("notify").setup({
+  max_width = 40
 })
 
 require('java').setup()
