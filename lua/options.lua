@@ -78,14 +78,5 @@ vim.diagnostic.config({
   severity_sort = true,
 })
 
-local function organize_imports()
-  local params = {
-    command = "_typescript.organizeImports",
-    arguments = { vim.api.nvim_buf_get_name(0) },
-    title = "",
-  }
-  vim.lsp.buf.execute_command(params)
-end
-vim.keymap.set("n", "<leader>oi", organize_imports, { desc = "Organize Imports" })
 vim.cmd.highlight('IndentLine guifg=#2b2b36')
 vim.cmd.highlight('IndentLineCurrent guifg=#51515e')
