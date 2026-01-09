@@ -130,6 +130,9 @@ require("noice").setup({
     inc_rename = false,
     lsp_doc_border = false
   },
+  popupmenu = {
+    enabled = false
+  }
 })
 require("notify").setup({
   max_width = 40
