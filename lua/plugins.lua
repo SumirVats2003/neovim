@@ -79,15 +79,28 @@ require("tokyonight").setup({
 })
 require("lualine").setup({
   options = {
-    -- component_separators = { left = '', right = '' },
-    -- section_separators = { left = '', right = '' },
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
     globalstatus = true
   },
   sections = {
-    lualine_b = {
-      { "branch", icon = { '' } }
-    },
+    -- lualine_b = {
+    --   -- { "branch", icon = { '' } }
+    -- },
     lualine_c = {
+      {
+        'filetype',
+        icon_only = true,
+        separator = "",
+        padding = { left = 1, right = 0 }
+      },
+      {
+        'filename',
+        symbols = {
+          modified = '',
+        },
+        padding = { left = 0, right = 1 }
+      },
       {
         'macro',
         fmt = function()
@@ -98,14 +111,15 @@ require("lualine").setup({
           return nil
         end,
         color = { bg = "#08bdba", fg = "#262e3d", gui = "bold" },
-        separator = { left = "", right = "" },
+        -- separator = { left = "", right = "" },
         draw_empty = false,
       }
     },
     lualine_x = {
       {
         'diff',
-        colored = true
+        colored = true,
+        symbols = { added = ' ', modified = ' ', removed = ' ' },
       }
     },
     lualine_y = { 'diagnostics' },
