@@ -63,6 +63,12 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
+-- Quickfix List Keymaps
+vim.keymap.set('n', '<leader>ln', ':cnext<cr>', { desc = "Next List Item" })
+vim.keymap.set('n', '<leader>lp', ':cprev<cr>', { desc = "Previous List Item" })
+vim.keymap.set('n', '<leader>lc', ':cclose<cr>', { desc = "Close List" })
+vim.keymap.set('n', '<leader>lo', ':copen<cr>', { desc = "Open List" })
+
 -- Diffview Keymaps
 vim.keymap.set('n', '<leader>fh', vim.cmd.DiffviewFileHistory)
 vim.keymap.set('n', '<leader>dv', vim.cmd.DiffviewOpen)
