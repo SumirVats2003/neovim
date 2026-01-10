@@ -127,7 +127,17 @@ require("lualine").setup({
         symbols = { added = ' ', modified = ' ', removed = ' ' },
       }
     },
-    lualine_y = { 'diagnostics' },
+    lualine_y = {
+      {
+        'diagnostics',
+        sources = { 'nvim_diagnostic' },
+        sections = { 'error', 'warn', 'info', 'hint' },
+        symbols = { error = ' ', warn = ' ', info = ' ', hint = '󰛨 ' },
+        colored = true,
+        update_in_insert = true,
+        always_visible = false,
+      }
+    },
     lualine_z = { 'lsp_status' }
   }
 })
