@@ -84,9 +84,9 @@ require("lualine").setup({
     globalstatus = true
   },
   sections = {
-    -- lualine_b = {
-    --   -- { "branch", icon = { '' } }
-    -- },
+    lualine_b = {
+      -- { "branch", icon = { '' } }
+    },
     lualine_c = {
       {
         'filetype',
