@@ -54,6 +54,11 @@ require("fzf-lua").setup({
   winopts = {
     width = 0.85,
     cursor_line = false
+  },
+  keymap = {
+    fzf = {
+      ["ctrl-q"] = "select-all+accept",
+    }
   }
 })
 require("timber").setup({
