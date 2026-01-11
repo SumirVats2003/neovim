@@ -102,6 +102,9 @@ require("lualine").setup({
         'filename',
         symbols = {
           modified = '',
+          readonly = '󰌾',
+          unnamed = ' 󰡯',
+          newfile = ' 󰝒'
         },
         padding = { left = 0, right = 1 }
       },
