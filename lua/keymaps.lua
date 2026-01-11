@@ -30,7 +30,7 @@ vim.keymap.set({ 'n', 'v' }, '<leader>sm', require("fzf-lua").marks)
 vim.keymap.set({ 'n', 'v' }, '<leader>gg', require("fzf-lua").git_diff)
 
 -- Miscellaneous Plugin Keymaps
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+vim.keymap.set("n", "<leader>u", vim.cmd.Undotree)
 vim.keymap.set('n', '<leader>o', ":Oil<CR>")
 
 -- LSP Config

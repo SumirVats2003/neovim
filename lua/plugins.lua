@@ -4,7 +4,6 @@ vim.pack.add({
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/ibhagwan/fzf-lua" },
   { src = "https://github.com/Goose97/timber.nvim" },
-  { src = "https://github.com/mbbill/undotree" },
   { src = "https://github.com/sindrets/diffview.nvim" },
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/echasnovski/mini.surround" },
