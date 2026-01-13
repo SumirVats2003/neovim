@@ -85,7 +85,8 @@ vim.diagnostic.config({
   underline = true,
   update_in_insert = false,
   severity_sort = true,
-  signs = false
+  signs = false,
+  jump = { float = true }
   -- {
   -- text = {
   --   [vim.diagnostic.severity.ERROR] = "",
