@@ -44,14 +44,6 @@ vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
 
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.hl.on_yank()
-  end,
-})
-
 vim.cmd [[colorscheme tokyonight-night]]
 
 vim.lsp.enable({ "lua_ls", "gopls", "angularls", "html", "css", "jdtls", "ts_ls" })
@@ -70,15 +62,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 vim.cmd("set completeopt+=noselect")
-
-vim.cmd.packadd("nvim.undotree")
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "nvim-undotree",
-  callback = function()
-    vim.cmd.wincmd("H")
-    vim.api.nvim_win_set_width(0, 30)
-  end
-})
 
 vim.diagnostic.config({
   virtual_text = true,
