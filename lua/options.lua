@@ -44,7 +44,7 @@ vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
 
-vim.cmd [[colorscheme tokyonight-night]]
+vim.cmd [[colorscheme rose-pine]]
 
 vim.lsp.enable({ "lua_ls", "gopls", "angularls", "html", "css", "jdtls", "ts_ls", "basedpyright" })
 vim.api.nvim_create_autocmd('LspAttach', {

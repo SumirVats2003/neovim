@@ -20,6 +20,7 @@ vim.pack.add({
   -- ui
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/folke/tokyonight.nvim" },
+  { src = "https://github.com/rose-pine/neovim" },
   { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/folke/todo-comments.nvim" },
   { src = "https://github.com/nvimdev/indentmini.nvim" },
@@ -80,6 +81,12 @@ require("guess-indent").setup({})
 
 require("tokyonight").setup({
   transparent = true
+})
+require("rose-pine").setup({
+  dim_inactive_windows = false,
+  groups = {
+    border = "overlay",
+  }
 })
 require("lualine").setup({
   options = {
