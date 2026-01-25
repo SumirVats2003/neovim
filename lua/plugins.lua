@@ -9,6 +9,7 @@ vim.pack.add({
   { src = "https://github.com/echasnovski/mini.surround" },
   { src = "https://github.com/pmizio/typescript-tools.nvim" },
   { src = "https://github.com/NMAC427/guess-indent.nvim" },
+  { src = "https://github.com/tjdevries/present.nvim" },
 
   -- treesitter
   {
@@ -78,6 +79,7 @@ require("gitsigns").setup({
 require("mini.surround").setup()
 require("typescript-tools").setup({})
 require("guess-indent").setup({})
+require("present").setup {}
 
 require("tokyonight").setup({
   transparent = true
