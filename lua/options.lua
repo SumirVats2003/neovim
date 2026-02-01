@@ -74,6 +74,7 @@ vim.diagnostic.config({
 
 vim.cmd.highlight('IndentLine guifg=#3b4252')
 vim.cmd.highlight('IndentLineCurrent guifg=#5e81ac')
+vim.api.nvim_set_hl(0, 'FloatBorder', {fg='#4c566a'})
 
 vim.g.nord_borders = true
 vim.g.nord_bold = true
