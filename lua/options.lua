@@ -44,7 +44,7 @@ vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
 
-vim.cmd [[colorscheme rose-pine]]
+vim.cmd [[colorscheme nord]]
 
 vim.lsp.enable({ "lua_ls", "gopls", "angularls", "html", "css", "jdtls", "ts_ls", "basedpyright", "marksman" })
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -70,15 +70,11 @@ vim.diagnostic.config({
   severity_sort = true,
   signs = false,
   jump = { float = true }
-  -- {
-  -- text = {
-  --   [vim.diagnostic.severity.ERROR] = "",
-  --   [vim.diagnostic.severity.WARN]  = "",
-  --   [vim.diagnostic.severity.INFO]  = "",
-  --   [vim.diagnostic.severity.HINT]  = "",
-  -- },
-  -- },
 })
 
-vim.cmd.highlight('IndentLine guifg=#2b2b36')
-vim.cmd.highlight('IndentLineCurrent guifg=#51515e')
+vim.cmd.highlight('IndentLine guifg=#3b4252')
+vim.cmd.highlight('IndentLineCurrent guifg=#5e81ac')
+
+vim.g.nord_borders = true
+vim.g.nord_bold = true
+vim.g.nord_contrast = true

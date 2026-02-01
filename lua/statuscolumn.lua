@@ -39,9 +39,9 @@ end
 _G.statuscolumn_marks = mark_at_line
 _G.statuscolumn_diagnostics = diagnostic_at_line
 
-vim.api.nvim_set_hl(0, "StatusColMark",  { fg = "#7a84f7", bold = true })
-vim.api.nvim_set_hl(0, "StatusColError", { fg = "#f7768e", bold = true })
-vim.api.nvim_set_hl(0, "StatusColWarn",  { fg = "#e0af68", bold = true })
+vim.api.nvim_set_hl(0, "StatusColMark",  { fg = "#d08770", bold = true })
+vim.api.nvim_set_hl(0, "StatusColError", { fg = "#bf616a", bold = true })
+vim.api.nvim_set_hl(0, "StatusColWarn",  { fg = "#ebcb8b", bold = true })
 vim.api.nvim_set_hl(0, "StatusColInfo",  { fg = "#73daca", bold = true })
 vim.api.nvim_set_hl(0, "StatusColHint",  { fg = "#08bdba", bold = true })
 

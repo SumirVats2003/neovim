@@ -20,8 +20,7 @@ vim.pack.add({
 
   -- ui
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
-  { src = "https://github.com/folke/tokyonight.nvim" },
-  { src = "https://github.com/rose-pine/neovim" },
+  { src = "https://github.com/shaunsingh/nord.nvim" },
   { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/folke/todo-comments.nvim" },
   { src = "https://github.com/nvimdev/indentmini.nvim" },
@@ -81,15 +80,15 @@ require("typescript-tools").setup({})
 require("guess-indent").setup({})
 require("present").setup {}
 
-require("tokyonight").setup({
-  transparent = true
-})
-require("rose-pine").setup({
-  dim_inactive_windows = false,
-  groups = {
-    border = "overlay",
-  }
-})
+-- require("tokyonight").setup({
+--   transparent = true
+-- })
+-- require("rose-pine").setup({
+--   dim_inactive_windows = false,
+--   groups = {
+--     border = "overlay",
+--   }
+-- })
 require("lualine").setup({
   options = {
     component_separators = { left = '', right = '' },
@@ -154,7 +153,9 @@ require("lualine").setup({
 })
 require("nvim-autopairs").setup()
 require("todo-comments").setup()
-require("indentmini").setup()
+require("indentmini").setup({
+  char = '▏'
+})
 require("noice").setup({
   lsp = {
     progress = { enabled = false },
