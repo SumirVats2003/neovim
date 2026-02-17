@@ -46,7 +46,7 @@ end)
 
 vim.cmd [[colorscheme nord]]
 
-vim.lsp.enable({ "lua_ls", "gopls", "angularls", "html", "css", "jdtls", "ts_ls", "basedpyright", "marksman" })
+vim.lsp.enable({ "clangd", "lua_ls", "gopls", "angularls", "html", "css", "jdtls", "ts_ls", "basedpyright", "marksman" })
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
     local client = vim.lsp.get_client_by_id(ev.data.client_id)

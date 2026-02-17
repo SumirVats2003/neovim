@@ -182,7 +182,7 @@ require("notify").setup({
 require('java').setup()
 require "lsp_signature".setup()
 require("nvim-treesitter.configs").setup({
-  ensure_installed = { "go", "typescript", "javascript", "lua", "html", "css", "angular", "java", "python" },
+  ensure_installed = { "go", "typescript", "javascript", "lua", "html", "css", "angular", "java", "python", "c" },
   highlight = { enable = true }
 })
 require("nvim-treesitter.configs").setup({
